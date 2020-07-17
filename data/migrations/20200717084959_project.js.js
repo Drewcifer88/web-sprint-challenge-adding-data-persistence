@@ -2,7 +2,6 @@
 module.exports.up = function (knex) {
     return knex.schema
         .createTable("project", (project) => {
-            // suppliers.uuid('id').primary();
             project.increments();
             project.string("name", 255).notNullable().unique();
             project.string("descriptions", 255);
@@ -24,6 +23,7 @@ module.exports.up = function (knex) {
                 .onUpdate("CASCADE")
                 .onDelete("RESTRICT");
         })
+
         .createTable("resources", (resources) => {
             // suppliers.uuid('id').primary();
             resources.increments();
@@ -31,6 +31,7 @@ module.exports.up = function (knex) {
             resources.string("name", 255).notNullable().unique();
             resources.string("descriptions", 255);
         })
+
         .createTable("project_resources", (project_resources) => {
             // suppliers.uuid('id').primary();
             project_resources.increments();

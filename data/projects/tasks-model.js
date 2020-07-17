@@ -5,10 +5,8 @@ module.exports = {
     findByTaskId,
     findByOneTaskId,
 };
-// !!Build an API with endpoints for:
 
 function findByTaskId(id) {
-    // retrieving a list of tasks. The list of tasks should include the project name and project description.
     return db
         .select(
             "p.name",
